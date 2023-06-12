@@ -14,7 +14,8 @@ servers:
     description: Holdermoon Staking Portal
 
 security:
-  - HlmHugsKeyAuth: []  
+  - HlmHugsKeyAuth: [pWPi9TwMesd3JlKoXmsiDMuTgSxAD8QDlSKJ4scijNa71CzcA5wZw3tkRxxKzLLnaJDNFSqywkxo8dH78yfPTA1rCUDrd5JWhFWXqzzvijK5Rrk9DJnbdTGlllIwzsZRUfj6FWhFL8ZFox6muGm7JukHNOnW5Kg2eRepchXL7HRDJoPvR9
+]  
 
 tags:
   - name: Farm management
