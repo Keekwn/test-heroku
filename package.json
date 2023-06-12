@@ -4,8 +4,8 @@
   "description": "API for communication between the Holdermoon Staking Portal &#127481;&#127479; and the HUGS Backoffice Portal &#127462;&#127481;",
   "main": "index.js",
   "scripts": {
-	"prestart": "npm install",
-	"start": "node index.js"
+    "prestart": "npm install",
+    "start": "PORT=8080 node index.js"
   },
   "keywords": [
     "swagger"
