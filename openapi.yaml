@@ -24,7 +24,7 @@ paths:
     summary: Endpoint for farm management
     post:
       summary: Creates a new farm
-      description: Crates a new farm within the staking portal &#127481;&#127479;, after the farm was bought within the backoffice portal &#127462;&#127481;
+      description: Creates a new farm within the staking portal &#127481;&#127479;, after the farm was bought within the backoffice portal &#127462;&#127481;
       operationId: farmStore
       tags:
         - Farm management
@@ -54,40 +54,40 @@ components:
       description: Information about the sold farm
       properties:
         walletAddress:
-            type: string
-            description: User's wallet address.
-            example: "0xDBC05B1ECB4FDAEF943819C0B04E9EF6DF4BABD6"
+          type: string
+          description: User's wallet address.
+          example: "0xDBC05B1ECB4FDAEF943819C0B04E9EF6DF4BABD6"
         walletChainId:
-            type: integer
-            description: Chain id of the wallet address. Usually Binance Smart Chain Mainnet.
-            default: 56
+          type: integer
+          description: Chain id of the wallet address. Usually Binance Smart Chain Mainnet.
+          default: 56
         farmValueCent:
-            type: integer
-            description: Farm value in USDT-cent. For example 2500000 == 25,000.00 USDT
+          type: integer
+          description: Farm value in USDT-cent. For example 2500000 == 25,000.00 USDT
         farmMaxStaking:
-            type: integer
-            description: Maximum amount of HLM allowed for staking x100. For example 5000000 == 50,000.00 HLM
+          type: integer
+          description: Maximum amount of HLM allowed for staking x100. For example 5000000 == 50,000.00 HLM
         farmDurationDays:
-            type: integer
-            description: Farm duration in days.
-            default: 120
+          type: integer
+          description: Farm duration in days.
+          default: 120
         farmPercentPer30Days:
-            type: integer
-            description: In basis points &#x2031;. For example 2500 == 25%
-            default: 2500
+          type: integer
+          description: In basis points &#x2031;. For example 2500 == 25%
+          default: 2500
         farmPaymentTime:
           type: string
-          format: timestamp
+          format: datetime
           example: "2023-03-28T09:41:19Z"    
           description: ISO 8601 UTC/Zulu Timestamp. Payment timestamp of the farm.
         farmStartTime:
           type: string
-          format: timestamp
+          format: datetime
           example: "2023-03-30T00:00:00Z"    
           description: ISO 8601 UTC/Zulu Timestamp. Start timestamp of the farm.
         farmBackofficeId:
-            type: integer
-            description: Unique id of the farm in the backoffice portal.
+          type: integer
+          description: Unique id of the farm in the backoffice portal.
     FarmContract:
       type: object
       description: Information about the created farm
@@ -97,11 +97,11 @@ components:
           description: A unique id for that stake/farm enabling the backoffice to match the sale to the stake when querying the contract
         stakeStartTime:
           type: string
-          format: timestamp
+          format: datetime
           example: "2023-03-28T09:41:19Z"    
           description: ISO 8601 UTC/Zulu Timestamp. Information about the new contract for matching contract and backoffice datasets, especially if there is no uniqueId.
         lastRewardTime:
           type: string
-          format: timestamp
+          format: datetime
           example: "2023-03-28T09:41:19Z"    
           description: ISO 8601 UTC/Zulu Timestamp. Information about the new contract for matching contract and backoffice datasets, especially if there is no uniqueId.
