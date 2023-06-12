@@ -1,5 +1,12 @@
 const express = require('express');
 const app = express();
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('js-yaml');
+const fs = require('fs');
+
+const swaggerDocument = YAML.load(fs.readFileSync('./openapi.yaml', 'utf8'));
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(express.json());
 
@@ -28,8 +35,8 @@ app.post('/boapi/v1/farm', (req, res) => {
         });
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
+
